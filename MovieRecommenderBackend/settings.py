@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'MovieRecommenderBackend.apps.URLDispatcher'
+    'MovieRecommenderBackend.apps.URLDispatcher',
+    'rest_framework_swagger'
 ]
 
 MIDDLEWARE = [
