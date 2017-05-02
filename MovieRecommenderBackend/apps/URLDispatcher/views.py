@@ -6,6 +6,12 @@ from django.shortcuts import render, redirect
 from MovieRecommenderBackend.apps.URLDispatcher.models import Movie
 
 
+def home(request):
+    if request.user.is_authenticated:
+        return redirect('/recommendations')
+    else:
+        return redirect('/movies')
+
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -15,7 +21,7 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('/')
+            return redirect('/recommendations')
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})

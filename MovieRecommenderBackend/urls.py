@@ -23,6 +23,8 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', auth_views.login),
+    url(r'^logout/$', auth_views.logout),
     url(r'^signup/$', views.signup, name='signup'),
-    url(r'^$', views.MovieListView.as_view())
+    url(r'^movies/$', views.MovieListView.as_view()),
+    url(r'^$', views.home)
 ]

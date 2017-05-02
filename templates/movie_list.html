@@ -4,7 +4,7 @@
 <h1>Movies</h1>
 <ul>
 {% for movie in movie_list %}
-    <li><a href="{{ movie.link }}">{{ movie.title }}</a> - {{ movie.rating }}</li>
+    <li><a href="{{ movie.link }}">{{ movie.title }}</a> - {{ movie.average_rating }}</li>
 {% empty %}
     <li>No movies yet.</li>
 {% endfor %}
