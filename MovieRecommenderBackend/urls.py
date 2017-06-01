@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout),
     url(r'^signup/$', views.signup, name='signup'),
     url(r'^movies/$', views.MovieListView.as_view()),
+    url(r'^recommendations/$', views.RecommendationsView.as_view()),
     url(r'^$', views.home)
 ]

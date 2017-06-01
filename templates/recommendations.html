@@ -1,0 +1,21 @@
+{% extends 'admin\base.html' %}
+
+{% block content %}
+<h1>The movies you have rated</h1>
+<ul>
+{% for movie in recommendations_list %}
+    <li><a href="{{ movie.2 }}">{{ movie.4 }}</a></li>
+{% empty %}
+    <li>Have not rated any movie yet.</li>
+{% endfor %}
+</ul>
+
+<h1>Please rate the following movies</h1>
+<ul>
+{% for movie in movie_list %}
+    <li><a href="{{ movie.link }}">{{ movie.title }}</a></li>
+{% empty %}
+    <li>No movies yet.</li>
+{% endfor %}
+</ul>
+{% endblock %}
